@@ -115,45 +115,48 @@ export function PaintingModal({ painting, onClose }: PaintingModalProps) {
             </div>
             
             <div>
-              <div className="bg-warm-gray p-6 rounded-lg">
-                <h4 className="font-serif text-xl font-semibold text-deep-charcoal mb-4">
-                  Interested in this piece?
-                </h4>
-                
-                {painting.availability === 'available' ? (
-                  <>
-                    <p className="text-gray-600 mb-6">
-                      This artwork is available for purchase. Get in touch to discuss pricing, 
-                      shipping options, and payment arrangements.
-                    </p>
-                    <Button 
-                      className="w-full bg-deep-charcoal text-white hover:bg-gray-800"
-                      onClick={handleInquiry}
-                    >
-                      Inquire About Purchase
-                      <i className="fas fa-envelope ml-2"></i>
-                    </Button>
-                  </>
-                ) : painting.availability === 'sold' ? (
-                  <>
-                    <p className="text-gray-600 mb-6">
-                      This piece has been sold to a private collector. However, I may have similar works available or can create a commission piece.
-                    </p>
-                    <Button 
-                      variant="outline"
-                      className="w-full"
-                      onClick={handleInquiry}
-                    >
-                      <i className="fas fa-check-circle mr-2"></i>
-                      Inquire About Similar Works
-                    </Button>
-                  </>
-                ) : (
-                  <div className="w-full text-center py-3 px-6 bg-gray-200 text-gray-500 font-medium rounded">
-                    <i className="fas fa-info-circle mr-2"></i>
-                    This piece is not for sale
-                  </div>
-                )}
+              {/* Hidden inquiry section - keep code for future backend integration */}
+              <div className="hidden">
+                <div className="bg-warm-gray p-6 rounded-lg">
+                  <h4 className="font-serif text-xl font-semibold text-deep-charcoal mb-4">
+                    Interested in this piece?
+                  </h4>
+                  
+                  {painting.availability === 'available' ? (
+                    <>
+                      <p className="text-gray-600 mb-6">
+                        This artwork is available for purchase. Get in touch to discuss pricing, 
+                        shipping options, and payment arrangements.
+                      </p>
+                      <Button 
+                        className="w-full bg-deep-charcoal text-white hover:bg-gray-800"
+                        onClick={handleInquiry}
+                      >
+                        Inquire About Purchase
+                        <i className="fas fa-envelope ml-2"></i>
+                      </Button>
+                    </>
+                  ) : painting.availability === 'sold' ? (
+                    <>
+                      <p className="text-gray-600 mb-6">
+                        This piece has been sold to a private collector. However, I may have similar works available or can create a commission piece.
+                      </p>
+                      <Button 
+                        variant="outline"
+                        className="w-full"
+                        onClick={handleInquiry}
+                      >
+                        <i className="fas fa-check-circle mr-2"></i>
+                        Inquire About Similar Works
+                      </Button>
+                    </>
+                  ) : (
+                    <div className="w-full text-center py-3 px-6 bg-gray-200 text-gray-500 font-medium rounded">
+                      <i className="fas fa-info-circle mr-2"></i>
+                      This piece is not for sale
+                    </div>
+                  )}
+                </div>
               </div>
               
               <div className="mt-6">
