@@ -59,11 +59,9 @@ export function GalleryView() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-semibold text-deep-charcoal mb-4">
-              {t('gallery.title')}
+              {t("gallery.title")}
             </h2>
-            <p className="text-lg text-gray-700">
-              {t('gallery.noArtworks')}
-            </p>
+            <p className="text-lg text-gray-700">{t("gallery.noArtworks")}</p>
           </div>
         </div>
       </section>
@@ -78,10 +76,10 @@ export function GalleryView() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-semibold text-deep-charcoal mb-4">
-              {t('gallery.title')}
+              {t("gallery.title")}
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              {t('gallery.subtitle')}
+              {t("gallery.subtitle")}
             </p>
           </div>
 
@@ -144,10 +142,10 @@ export function GalleryView() {
                   }`}
                 ></i>
                 {currentPainting.availability === "available"
-                  ? t('gallery.available')
+                  ? t("gallery.available")
                   : currentPainting.availability === "sold"
-                  ? t('gallery.sold')
-                  : t('gallery.notForSale')}
+                  ? t("gallery.sold")
+                  : t("gallery.notForSale")}
               </span>
             </div>
 
@@ -179,7 +177,7 @@ export function GalleryView() {
                   alt={painting.title}
                   className="w-full h-48 object-cover cursor-pointer"
                   onClick={() => openModal(painting)}
-                  loading="lazy"
+                  //loading="lazy"
                 />
                 <div className="p-4">
                   <h3 className="font-serif text-lg font-semibold text-deep-charcoal mb-1">
@@ -201,10 +199,10 @@ export function GalleryView() {
                       <i className="fas fa-star text-yellow-500 mr-1 text-xs"></i>
                     )}
                     {painting.availability === "available"
-                      ? t('gallery.available')
+                      ? t("gallery.available")
                       : painting.availability === "sold"
-                      ? t('gallery.sold')
-                      : t('gallery.notForSale')}
+                      ? t("gallery.sold")
+                      : t("gallery.notForSale")}
                   </span>
                 </div>
               </div>
