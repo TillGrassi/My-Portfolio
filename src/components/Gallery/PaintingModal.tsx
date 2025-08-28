@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import type { Painting } from "@shared/schema";
+import type { Painting } from "@/types";
 
 interface PaintingModalProps {
   painting: Painting;
@@ -23,25 +23,8 @@ export function PaintingModal({ painting, onClose }: PaintingModalProps) {
   }, [onClose]);
 
   const handleInquiry = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      onClose();
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-      
-      // Pre-fill contact form if possible
-      setTimeout(() => {
-        const subjectSelect = document.querySelector('select[name="subject"]') as HTMLSelectElement;
-        const messageTextarea = document.querySelector('textarea[name="message"]') as HTMLTextAreaElement;
-        
-        if (subjectSelect) {
-          subjectSelect.value = 'purchase';
-        }
-        
-        if (messageTextarea && painting) {
-          messageTextarea.value = `I'm interested in purchasing "${painting.title}" (${painting.year}). Could you please provide more information about pricing and availability?`;
-        }
-      }, 100);
-    }
+    // Contact form disabled for frontend-only mode
+    alert('Contact functionality is currently disabled. Please check back later.');
   };
 
   return (
@@ -118,7 +101,7 @@ export function PaintingModal({ painting, onClose }: PaintingModalProps) {
                 <div className="mb-6">
                   <h5 className="font-medium text-gray-700 mb-3">Tags:</h5>
                   <div className="flex flex-wrap gap-2">
-                    {painting.tags.map((tag, index) => (
+                    {painting.tags.map((tag: string, index: number) => (
                       <span 
                         key={index}
                         className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"

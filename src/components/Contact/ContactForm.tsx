@@ -47,15 +47,15 @@ export function ContactForm() {
 
   const onSubmit = (data: ContactFormData) => {
     setIsSubmitting(true);
-    // Simulate a delay to mimic API call
+    // Contact form disabled for frontend-only mode
     setTimeout(() => {
       toast({
-        title: "Message sent!",
-        description: "Thank you for your inquiry. I'll get back to you soon.",
+        title: "Contact form disabled",
+        description: "Contact functionality is currently disabled. Please check back later.",
+        variant: "destructive",
       });
-      form.reset();
       setIsSubmitting(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import paintings from "../../assets/paintings.json";
 import { PaintingModal } from "./PaintingModal";
 import { GalleryNavigation } from "./GalleryNavigation";
-import type { Painting } from "@shared/schema";
+import type { Painting } from "@/types";
 
 export function GalleryView() {
   const [currentPaintingIndex, setCurrentPaintingIndex] = useState(0);
