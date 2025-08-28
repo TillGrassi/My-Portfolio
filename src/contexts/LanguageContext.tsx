@@ -28,7 +28,7 @@ const translations = {
     // Gallery
     "gallery.title": "Galerie",
     "gallery.subtitle":
-      "Navigieren Sie durch die Galerie mit den Pfeilen, um jedes Gemälde zu erleben, als würden Sie durch einen zeitgenössischen Kunstraum gehen",
+      "Eine Sammlung neuer Werke und Erkundungen in der Landschaftsmalerei.",
     "gallery.available": "Verfügbar",
     "gallery.sold": "Verkauft",
     "gallery.notForSale": "Nicht verkäuflich",
@@ -95,7 +95,7 @@ const translations = {
     // Gallery
     "gallery.title": "Gallery",
     "gallery.subtitle":
-      "Navigate through the gallery using the arrows to experience each painting as if walking through a contemporary art space",
+      "A collection of recent works and explorations in landscape painting.",
     "gallery.available": "Available",
     "gallery.sold": "Sold",
     "gallery.notForSale": "Not for Sale",

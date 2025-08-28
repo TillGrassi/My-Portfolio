@@ -10,90 +10,99 @@ interface PaintingModalProps {
 
 export function PaintingModal({ painting, onClose }: PaintingModalProps) {
   const { t } = useLanguage();
-  
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === "Escape") onClose();
     };
-    
-    document.addEventListener('keydown', handleEscape);
-    document.body.style.overflow = 'hidden';
-    
+
+    document.addEventListener("keydown", handleEscape);
+    document.body.style.overflow = "hidden";
+
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'auto';
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "auto";
     };
   }, [onClose]);
 
   const handleInquiry = () => {
     // Contact form disabled for frontend-only mode
-    alert('Contact functionality is currently disabled. Please check back later.');
+    alert(
+      "Contact functionality is currently disabled. Please check back later."
+    );
   };
 
   return (
-    <div 
-      className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+    <div
+      className="fixed inset-0 bg-black/80 flex items-start justify-center z-50 overflow-y-auto"
       onClick={onClose}
     >
-      <div 
+      <div
         className="bg-white max-w-4xl mx-4 rounded-lg overflow-hidden shadow-2xl animate-fade-in"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative">
-          <button 
+          <button
             className="absolute top-4 right-4 text-white bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors z-10"
             onClick={onClose}
           >
             <i className="fas fa-times text-lg"></i>
           </button>
-          
-          <img 
+
+          <img
             src={painting.imageUrl}
             alt={painting.title}
             className="w-full h-96 object-cover"
           />
         </div>
-        
+
         <div className="p-8">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="font-serif text-3xl font-semibold text-deep-charcoal mb-4">
                 {painting.title}
               </h3>
-              
+
               <div className="space-y-3 text-gray-700 mb-6">
                 <div className="flex justify-between">
-                  <span className="font-medium">{t('modal.year')}</span>
+                  <span className="font-medium">{t("modal.year")}</span>
                   <span>{painting.year}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-medium">{t('modal.medium')}</span>
+                  <span className="font-medium">{t("modal.medium")}</span>
                   <span>{painting.medium}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-medium">{t('modal.dimensions')}</span>
+                  <span className="font-medium">{t("modal.dimensions")}</span>
                   <span>{painting.size}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-medium">{t('modal.status')}</span>
-                  <span 
+                  <span className="font-medium">{t("modal.status")}</span>
+                  <span
                     className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-                      painting.availability === 'available' 
-                        ? 'bg-green-100 text-green-800' 
-                        : painting.availability === 'sold'
-                        ? 'bg-orange-100 text-orange-800'
-                        : 'bg-gray-100 text-gray-800'
+                      painting.availability === "available"
+                        ? "bg-green-100 text-green-800"
+                        : painting.availability === "sold"
+                        ? "bg-orange-100 text-orange-800"
+                        : "bg-gray-100 text-gray-800"
                     }`}
                   >
-                    <i className={`fas fa-circle mr-2 text-xs ${
-                      painting.availability === 'available' ? 'text-green-500' : 'text-orange-500'
-                    }`}></i>
-                    {painting.availability === 'available' ? t('gallery.available') : 
-                     painting.availability === 'sold' ? t('gallery.sold') : t('gallery.notForSale')}
+                    <i
+                      className={`fas fa-circle mr-2 text-xs ${
+                        painting.availability === "available"
+                          ? "text-green-500"
+                          : "text-orange-500"
+                      }`}
+                    ></i>
+                    {painting.availability === "available"
+                      ? t("gallery.available")
+                      : painting.availability === "sold"
+                      ? t("gallery.sold")
+                      : t("gallery.notForSale")}
                   </span>
                 </div>
               </div>
-              
+
               {painting.description && (
                 <p className="text-gray-600 leading-relaxed mb-6">
                   {painting.description}
@@ -102,10 +111,12 @@ export function PaintingModal({ painting, onClose }: PaintingModalProps) {
 
               {painting.tags && painting.tags.length > 0 && (
                 <div className="mb-6">
-                  <h5 className="font-medium text-gray-700 mb-3">{t('modal.tags')}</h5>
+                  <h5 className="font-medium text-gray-700 mb-3">
+                    {t("modal.tags")}
+                  </h5>
                   <div className="flex flex-wrap gap-2">
                     {painting.tags.map((tag: string, index: number) => (
-                      <span 
+                      <span
                         key={index}
                         className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
                       >
@@ -116,87 +127,97 @@ export function PaintingModal({ painting, onClose }: PaintingModalProps) {
                 </div>
               )}
             </div>
-            
+
             <div>
               {/* Hidden inquiry section - keep code for future backend integration */}
               <div className="hidden">
                 <div className="bg-warm-gray p-6 rounded-lg">
                   <h4 className="font-serif text-xl font-semibold text-deep-charcoal mb-4">
-                    {t('modal.interested')}
+                    {t("modal.interested")}
                   </h4>
-                  
-                  {painting.availability === 'available' ? (
+
+                  {painting.availability === "available" ? (
                     <>
                       <p className="text-gray-600 mb-6">
-                        {t('modal.availableText')}
+                        {t("modal.availableText")}
                       </p>
-                      <Button 
+                      <Button
                         className="w-full bg-deep-charcoal text-white hover:bg-gray-800"
                         onClick={handleInquiry}
                       >
-                        {t('modal.inquirePurchase')}
+                        {t("modal.inquirePurchase")}
                         <i className="fas fa-envelope ml-2"></i>
                       </Button>
                     </>
-                  ) : painting.availability === 'sold' ? (
+                  ) : painting.availability === "sold" ? (
                     <>
                       <p className="text-gray-600 mb-6">
-                        {t('modal.soldText')}
+                        {t("modal.soldText")}
                       </p>
-                      <Button 
+                      <Button
                         variant="outline"
                         className="w-full"
                         onClick={handleInquiry}
                       >
                         <i className="fas fa-check-circle mr-2"></i>
-                        {t('modal.inquireSimilar')}
+                        {t("modal.inquireSimilar")}
                       </Button>
                     </>
                   ) : (
                     <div className="w-full text-center py-3 px-6 bg-gray-200 text-gray-500 font-medium rounded">
                       <i className="fas fa-info-circle mr-2"></i>
-                      {t('modal.notForSaleText')}
+                      {t("modal.notForSaleText")}
                     </div>
                   )}
                 </div>
               </div>
-              
+
               <div className="mt-6">
-                <h5 className="font-medium text-gray-700 mb-3">{t('modal.share')}</h5>
+                <h5 className="font-medium text-gray-700 mb-3">
+                  {t("modal.share")}
+                </h5>
                 <div className="flex space-x-3">
-                  <button 
+                  <button
                     className="text-gray-500 hover:text-deep-charcoal transition-colors"
-                    onClick={() => navigator.share?.({ 
-                      title: painting.title, 
-                      text: `Check out "${painting.title}" by Till Graßmann`,
-                      url: window.location.href 
-                    })}
+                    onClick={() =>
+                      navigator.share?.({
+                        title: painting.title,
+                        text: `Check out "${painting.title}" by Till Graßmann`,
+                        url: window.location.href,
+                      })
+                    }
                   >
                     <i className="fab fa-facebook text-xl"></i>
                   </button>
-                  <button 
+                  <button
                     className="text-gray-500 hover:text-deep-charcoal transition-colors"
-                    onClick={() => navigator.share?.({ 
-                      title: painting.title, 
-                      text: `Check out "${painting.title}" by Till Graßmann`,
-                      url: window.location.href 
-                    })}
+                    onClick={() =>
+                      navigator.share?.({
+                        title: painting.title,
+                        text: `Check out "${painting.title}" by Till Graßmann`,
+                        url: window.location.href,
+                      })
+                    }
                   >
                     <i className="fab fa-twitter text-xl"></i>
                   </button>
-                  <button 
+                  <button
                     className="text-gray-500 hover:text-deep-charcoal transition-colors"
-                    onClick={() => navigator.share?.({ 
-                      title: painting.title, 
-                      text: `Check out "${painting.title}" by Till Graßmann`,
-                      url: window.location.href 
-                    })}
+                    onClick={() =>
+                      navigator.share?.({
+                        title: painting.title,
+                        text: `Check out "${painting.title}" by Till Graßmann`,
+                        url: window.location.href,
+                      })
+                    }
                   >
                     <i className="fab fa-pinterest text-xl"></i>
                   </button>
-                  <button 
+                  <button
                     className="text-gray-500 hover:text-deep-charcoal transition-colors"
-                    onClick={() => navigator.clipboard.writeText(window.location.href)}
+                    onClick={() =>
+                      navigator.clipboard.writeText(window.location.href)
+                    }
                   >
                     <i className="fas fa-link text-xl"></i>
                   </button>
