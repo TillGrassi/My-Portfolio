@@ -46,26 +46,26 @@ export function Navigation({ showAdminAccess = false }: NavigationProps) {
               href="#"
               className="font-serif text-2xl font-semibold text-deep-charcoal hover:text-gray-600 transition-colors"
             >
-              Till Graßmann
+              Till Grassmann
             </a>
             <div className="hidden md:flex space-x-6">
               <a
                 href="#gallery"
                 className="text-gray-700 hover:text-deep-charcoal transition-colors font-medium"
               >
-                {t('nav.gallery')}
+                {t("nav.gallery")}
               </a>
               <a
                 href="#about"
                 className="text-gray-700 hover:text-deep-charcoal transition-colors font-medium"
               >
-                {t('nav.about')}
+                {t("nav.about")}
               </a>
               <a
                 href="#contact"
                 className="text-gray-700 hover:text-deep-charcoal transition-colors font-medium"
               >
-                {t('nav.contact')}
+                {t("nav.contact")}
               </a>
             </div>
           </div>
@@ -74,21 +74,21 @@ export function Navigation({ showAdminAccess = false }: NavigationProps) {
             {/* Language Toggle */}
             <div className="hidden md:flex items-center space-x-2 bg-gray-100 rounded-full p-1">
               <button
-                onClick={() => setLanguage('de')}
+                onClick={() => setLanguage("de")}
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                  language === 'de' 
-                    ? 'bg-white text-deep-charcoal shadow-sm' 
-                    : 'text-gray-600 hover:text-deep-charcoal'
+                  language === "de"
+                    ? "bg-white text-deep-charcoal shadow-sm"
+                    : "text-gray-600 hover:text-deep-charcoal"
                 }`}
               >
                 DE
               </button>
               <button
-                onClick={() => setLanguage('en')}
+                onClick={() => setLanguage("en")}
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                  language === 'en' 
-                    ? 'bg-white text-deep-charcoal shadow-sm' 
-                    : 'text-gray-600 hover:text-deep-charcoal'
+                  language === "en"
+                    ? "bg-white text-deep-charcoal shadow-sm"
+                    : "text-gray-600 hover:text-deep-charcoal"
                 }`}
               >
                 EN
@@ -127,43 +127,43 @@ export function Navigation({ showAdminAccess = false }: NavigationProps) {
                 className="block text-gray-700 hover:text-deep-charcoal transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {t('nav.gallery')}
+                {t("nav.gallery")}
               </a>
               <a
                 href="#about"
                 className="block text-gray-700 hover:text-deep-charcoal transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {t('nav.about')}
+                {t("nav.about")}
               </a>
               <a
                 href="#contact"
                 className="block text-gray-700 hover:text-deep-charcoal transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {t('nav.contact')}
+                {t("nav.contact")}
               </a>
-              
+
               {/* Mobile Language Toggle */}
               <div className="pt-3 border-t border-gray-200">
                 <div className="flex items-center space-x-2">
                   <span className="text-sm text-gray-500">Sprache:</span>
                   <button
-                    onClick={() => setLanguage('de')}
+                    onClick={() => setLanguage("de")}
                     className={`px-2 py-1 rounded text-sm font-medium transition-colors ${
-                      language === 'de' 
-                        ? 'bg-deep-charcoal text-white' 
-                        : 'text-gray-600 hover:text-deep-charcoal'
+                      language === "de"
+                        ? "bg-deep-charcoal text-white"
+                        : "text-gray-600 hover:text-deep-charcoal"
                     }`}
                   >
                     DE
                   </button>
                   <button
-                    onClick={() => setLanguage('en')}
+                    onClick={() => setLanguage("en")}
                     className={`px-2 py-1 rounded text-sm font-medium transition-colors ${
-                      language === 'en' 
-                        ? 'bg-deep-charcoal text-white' 
-                        : 'text-gray-600 hover:text-deep-charcoal'
+                      language === "en"
+                        ? "bg-deep-charcoal text-white"
+                        : "text-gray-600 hover:text-deep-charcoal"
                     }`}
                   >
                     EN

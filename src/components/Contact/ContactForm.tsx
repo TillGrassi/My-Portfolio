@@ -53,7 +53,8 @@ export function ContactForm() {
     setTimeout(() => {
       toast({
         title: "Contact form disabled",
-        description: "Contact functionality is currently disabled. Please check back later.",
+        description:
+          "Contact functionality is currently disabled. Please check back later.",
         variant: "destructive",
       });
       setIsSubmitting(false);
@@ -65,21 +66,27 @@ export function ContactForm() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="font-serif text-4xl md:text-5xl font-semibold text-deep-charcoal mb-4">
-            {t('contact.title')}
+            {t("contact.title")}
           </h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            {t('contact.subtitle')}
+            {t("contact.subtitle")}
           </p>
+          <div>
+            <span className="text-gray-700 text-2xl">
+              <br />
+              E-Mail: kontakt@tillgrassmann.de
+            </span>
+          </div>
         </div>
 
         <div className="text-center">
           <div className="bg-gray-100 p-12 rounded-lg">
             <i className="fas fa-tools text-4xl text-gray-400 mb-4"></i>
             <h3 className="font-serif text-2xl font-semibold text-gray-600 mb-4">
-              {t('contact.comingSoon')}
+              {t("contact.comingSoon")}
             </h3>
             <p className="text-gray-500 max-w-md mx-auto">
-              {t('contact.comingSoonText')}
+              {t("contact.comingSoonText")}
             </p>
           </div>
 
@@ -88,12 +95,14 @@ export function ContactForm() {
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <h3 className="font-serif text-2xl font-semibold text-deep-charcoal mb-6">
-                  {t('contact.info')}
+                  {t("contact.info")}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <i className="fas fa-envelope text-deep-charcoal mr-4 w-5"></i>
-                    <span className="text-gray-700">contact@tillgrassmann.art</span>
+                    <span className="text-gray-700">
+                      kontakt@tillgrassmann.de
+                    </span>
                   </div>
                   <div className="flex items-center">
                     <i className="fas fa-phone text-deep-charcoal mr-4 w-5"></i>
@@ -107,7 +116,7 @@ export function ContactForm() {
 
                 <div className="mt-8">
                   <h4 className="font-semibold text-deep-charcoal mb-4">
-                    {t('contact.followWork')}
+                    {t("contact.followWork")}
                   </h4>
                   <div className="flex space-x-4">
                     <a
