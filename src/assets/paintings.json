@@ -1,131 +1,21 @@
 [
   {
-    "id": 1,
-    "title": "Beitstadfjord from Follaheia peak after sunset",
-    "imageUrl": "assets/Beitstadfjord from Follaheia peak after sunset.JPG",
-    "year": 2023,
-    "medium": "Acrylic on paper",
-    "size": "50x70cm",
-    "availability": "available",
-    "featured": true
-  },
-  {
-    "id": 2,
-    "title": "Beitstadfjord from Follafoss",
-    "imageUrl": "assets/Beitstadfjord from Follafoss.JPG",
-    "year": 2023,
-    "medium": "Acrylic on paper",
-    "size": "70x100cm",
-    "availability": "sold",
-    "featured": false
-  },
-  {
-    "id": 3,
-    "title": "Cliffside with Building in Lemvig",
-    "imageUrl": "assets/Cliffside with building in Lemvig.jpg",
-    "year": 2023,
-    "medium": "Acrylic on paper",
-    "size": "43x62cm",
-    "availability": "available",
-    "featured": true
-  },
-  {
-    "id": 4,
-    "title": "Full Moon in Lemvig",
-    "imageUrl": "assets/Full moon in Lemvig.JPG",
-    "year": 2023,
-    "medium": "Acrylic on paper",
-    "size": "30x40cm",
-    "availability": "sold",
-    "featured": true
-  },
-  {
-    "id": 5,
-    "title": "Möns Klint from Above",
-    "imageUrl": "assets/Mons Klint from above.JPG",
-    "year": 2023,
-    "medium": "Acrylic on paper",
-    "size": "30x40cm",
-    "availability": "available",
-    "featured": true
-  },
-  {
-    "id": 6,
-    "title": "Snowy Forest",
-    "imageUrl": "assets/Snowy forest.JPG",
-    "year": 2023,
-    "medium": "Acrylic on paper",
-    "size": "58x68cm",
-    "availability": "sold",
-    "featured": true
-  },
-  {
-    "id": 7,
-    "title": "Bridge in the Salt Marshes",
-    "imageUrl": "assets/Bridge in the salt marshes.jpg",
-    "year": 2024,
-    "medium": "Acrylic on paper",
-    "size": "50x70cm",
-    "availability": "available",
-    "featured": true
-  },
-  {
-    "id": 8,
-    "title": "Beitstadfjord after sunset",
-    "imageUrl": "assets/Beitstadfjord after sunset.JPG",
-    "year": 2023,
-    "medium": "Acrylic on paper",
-    "size": "56x74cm",
-    "availability": "available",
-    "featured": true
-  },
-  {
-    "id": 9,
-    "title": "Cabin in the alps",
-    "imageUrl": "assets/Cabin in the alps.JPG",
+    "id": 16,
+    "title": "Møns Klint from below",
+    "imageUrl": "assets/Møns Klint from below.JPG",
     "year": 2025,
     "medium": "Acrylic on paper",
-    "size": "62x25cm",
+    "size": "75x115cm",
     "availability": "available",
     "featured": true
   },
   {
-    "id": 10,
-    "title": "Misty forest in the mountains",
-    "imageUrl": "assets/Misty forest in the mountains.jpg",
-    "year": 2023,
-    "medium": "Acrylic on canvas",
-    "size": "40x30cm",
-    "availability": "sold",
-    "featured": true
-  },
-  {
-    "id": 11,
-    "title": "Monastery on a cliff",
-    "imageUrl": "assets/Monastery on a cliff.jpg",
-    "year": 2024,
+    "id": 15,
+    "title": "French Countryside",
+    "imageUrl": "assets/French Countryside.jpg",
+    "year": 2025,
     "medium": "Acrylic on paper",
-    "size": "70x50cm",
-    "availability": "available",
-    "featured": true
-  },
-  {
-    "id": 12,
-    "title": "New year's day in Follafoss",
-    "imageUrl": "assets/New year's day in Follafoss.JPG",
-    "year": 2024,
-    "medium": "Acrylic on paper",
-    "size": "24x18cm",
-    "availability": "available",
-    "featured": true
-  },
-  {
-    "id": 13,
-    "title": "Sirdal from Dorgefossen",
-    "imageUrl": "assets/Sirdal from Dorgefossen.jpg",
-    "year": 2023,
-    "medium": "Acrylic on paper",
-    "size": "50x60cm",
+    "size": "30x20cm",
     "availability": "available",
     "featured": true
   },
@@ -140,7 +30,37 @@
     "featured": true
   },
   {
-    "id": 15,
+    "id": 13,
+    "title": "Cabin in the alps",
+    "imageUrl": "assets/Cabin in the alps.JPG",
+    "year": 2025,
+    "medium": "Acrylic on paper",
+    "size": "62x25cm",
+    "availability": "available",
+    "featured": true
+  },
+  {
+    "id": 12,
+    "title": "New year's day in Follafoss",
+    "imageUrl": "assets/New year's day in Follafoss.JPG",
+    "year": 2024,
+    "medium": "Acrylic on paper",
+    "size": "24x18cm",
+    "availability": "available",
+    "featured": true
+  },
+  {
+    "id": 11,
+    "title": "Monastery on a cliff",
+    "imageUrl": "assets/Monastery on a cliff.jpg",
+    "year": 2024,
+    "medium": "Acrylic on paper",
+    "size": "70x50cm",
+    "availability": "available",
+    "featured": true
+  },
+  {
+    "id": 10,
     "title": "Winter morning sun in Vedersö Klit",
     "imageUrl": "assets/Winter morning sun in Vedersö Klit.JPG",
     "year": 2024,
@@ -150,13 +70,103 @@
     "featured": true
   },
   {
-    "id": 16,
-    "title": "French Countryside",
-    "imageUrl": "assets/French Countryside.jpg",
-    "year": 2025,
+    "id": 9,
+    "title": "Bridge in the Salt Marshes",
+    "imageUrl": "assets/Bridge in the salt marshes.jpg",
+    "year": 2024,
     "medium": "Acrylic on paper",
-    "size": "30x20cm",
+    "size": "50x70cm",
     "availability": "available",
+    "featured": true
+  },
+  {
+    "id": 8,
+    "title": "Cliffside with Building in Lemvig",
+    "imageUrl": "assets/Cliffside with building in Lemvig.jpg",
+    "year": 2023,
+    "medium": "Acrylic on paper",
+    "size": "43x62cm",
+    "availability": "available",
+    "featured": true
+  },
+  {
+    "id": 7,
+    "title": "Full Moon in Lemvig",
+    "imageUrl": "assets/Full moon in Lemvig.JPG",
+    "year": 2023,
+    "medium": "Acrylic on paper",
+    "size": "30x40cm",
+    "availability": "sold",
+    "featured": true
+  },
+  {
+    "id": 6,
+    "title": "Møns Klint from above",
+    "imageUrl": "assets/Mons Klint from above.JPG",
+    "year": 2023,
+    "medium": "Acrylic on paper",
+    "size": "30x40cm",
+    "availability": "available",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "Snowy Forest",
+    "imageUrl": "assets/Snowy forest.JPG",
+    "year": 2023,
+    "medium": "Acrylic on paper",
+    "size": "58x68cm",
+    "availability": "sold",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Sirdal from Dorgefossen",
+    "imageUrl": "assets/Sirdal from Dorgefossen.jpg",
+    "year": 2023,
+    "medium": "Acrylic on paper",
+    "size": "50x60cm",
+    "availability": "available",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Beitstadfjord after sunset",
+    "imageUrl": "assets/Beitstadfjord after sunset.JPG",
+    "year": 2023,
+    "medium": "Acrylic on paper",
+    "size": "56x74cm",
+    "availability": "available",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Beitstadfjord from Follafoss",
+    "imageUrl": "assets/Beitstadfjord from Follafoss.JPG",
+    "year": 2023,
+    "medium": "Acrylic on paper",
+    "size": "70x100cm",
+    "availability": "sold",
+    "featured": false
+  },
+  {
+    "id": 1,
+    "title": "Beitstadfjord from Follaheia peak after sunset",
+    "imageUrl": "assets/Beitstadfjord from Follaheia peak after sunset.JPG",
+    "year": 2023,
+    "medium": "Acrylic on paper",
+    "size": "50x70cm",
+    "availability": "available",
+    "featured": true
+  },
+  {
+    "id": 0,
+    "title": "Misty forest in the mountains",
+    "imageUrl": "assets/Misty forest in the mountains.jpg",
+    "year": 2023,
+    "medium": "Acrylic on canvas",
+    "size": "40x30cm",
+    "availability": "sold",
     "featured": true
   }
 ]
