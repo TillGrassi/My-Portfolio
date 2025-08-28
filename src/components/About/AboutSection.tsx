@@ -1,32 +1,20 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export function AboutSection() {
+  const { t } = useLanguage();
+  
   return (
     <section id="about" className="py-20 bg-warm-gray">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
             <h2 className="font-serif text-4xl md:text-5xl font-semibold text-deep-charcoal mb-6">
-              About Till
+              {t('about.title')}
             </h2>
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-              <p>
-                Till Graßmann is a landscape painter with a deep artistic
-                connection that traces back to his childhood. Influenced by his
-                grandmother, Margret Brink, he has made art a central part of
-                his life. Since 2021, he has devoted himself intensively to
-                painting, with a particular focus on landscapes.
-              </p>
-              <p>
-                His work is marked by a strong sense of wanderlust and reflects
-                his deep bond with nature. Over the years, Till Graßmann has
-                continuously developed his style, leading to a neo-impressionist
-                approach in his most recent works.
-              </p>
-              <p>
-                With expressive brushstrokes and vibrant colors, he captures not
-                only the physical landscape but also the emotional essence of
-                the scenes he portrays. Each of his paintings represents another
-                chapter in his ongoing artistic journey.
-              </p>
+              <p>{t('about.bio1')}</p>
+              <p>{t('about.bio2')}</p>
+              <p>{t('about.bio3')}</p>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-4">

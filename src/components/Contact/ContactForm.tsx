@@ -21,6 +21,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -33,6 +34,7 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export function ContactForm() {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactFormData>({
@@ -63,12 +65,10 @@ export function ContactForm() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="font-serif text-4xl md:text-5xl font-semibold text-deep-charcoal mb-4">
-            Get in Touch
+            {t('contact.title')}
           </h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Interested in purchasing a piece or commissioning custom work? I'd
-            love to hear from you and discuss how my art can find a place in
-            your space.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -76,10 +76,10 @@ export function ContactForm() {
           <div className="bg-gray-100 p-12 rounded-lg">
             <i className="fas fa-tools text-4xl text-gray-400 mb-4"></i>
             <h3 className="font-serif text-2xl font-semibold text-gray-600 mb-4">
-              Contact Form Coming Soon
+              {t('contact.comingSoon')}
             </h3>
             <p className="text-gray-500 max-w-md mx-auto">
-              The contact functionality is currently being developed. Please check back later or reach out through social media.
+              {t('contact.comingSoonText')}
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export function ContactForm() {
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <h3 className="font-serif text-2xl font-semibold text-deep-charcoal mb-6">
-                  Contact Information
+                  {t('contact.info')}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
@@ -107,7 +107,7 @@ export function ContactForm() {
 
                 <div className="mt-8">
                   <h4 className="font-semibold text-deep-charcoal mb-4">
-                    Follow My Work
+                    {t('contact.followWork')}
                   </h4>
                   <div className="flex space-x-4">
                     <a

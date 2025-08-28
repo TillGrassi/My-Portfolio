@@ -2,8 +2,11 @@ import { Navigation } from "@/components/Navigation/Navigation";
 import { GalleryView } from "@/components/Gallery/GalleryView";
 import { AboutSection } from "@/components/About/AboutSection";
 import { ContactForm } from "@/components/Contact/ContactForm";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Landing() {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen bg-warm-gray">
       <Navigation />
@@ -12,16 +15,16 @@ export default function Landing() {
       <section className="pt-24 pb-16 bg-gradient-to-b from-white to-warm-gray">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="font-serif text-5xl md:text-7xl font-bold text-deep-charcoal mb-6">
-            Till Graßmann
+            {t('hero.title')}
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Landscape paintings that capture the emotional essence of nature through neo-impressionist brushwork and vibrant colors
+            {t('hero.subtitle')}
           </p>
           <a 
             href="#gallery" 
             className="inline-flex items-center bg-deep-charcoal text-white px-8 py-4 hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 font-medium"
           >
-            View Gallery
+            {t('hero.cta')}
             <i className="fas fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -38,22 +41,21 @@ export default function Landing() {
             <div>
               <h3 className="font-serif text-2xl font-semibold mb-4">Till Graßmann</h3>
               <p className="text-gray-300 leading-relaxed">
-                Landscape painter capturing the emotional essence of nature through 
-                neo-impressionist brushwork and vibrant colors.
+                {t('footer.description')}
               </p>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <h4 className="font-semibold mb-4">{t('footer.quickLinks')}</h4>
               <div className="space-y-2">
-                <a href="#gallery" className="block text-gray-300 hover:text-white transition-colors">Gallery</a>
-                <a href="#about" className="block text-gray-300 hover:text-white transition-colors">About</a>
-                <a href="#contact" className="block text-gray-300 hover:text-white transition-colors">Contact</a>
+                <a href="#gallery" className="block text-gray-300 hover:text-white transition-colors">{t('nav.gallery')}</a>
+                <a href="#about" className="block text-gray-300 hover:text-white transition-colors">{t('nav.about')}</a>
+                <a href="#contact" className="block text-gray-300 hover:text-white transition-colors">{t('nav.contact')}</a>
               </div>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
+              <h4 className="font-semibold mb-4">{t('footer.connect')}</h4>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-300 hover:text-white transition-colors">
                   <i className="fab fa-instagram text-xl"></i>
@@ -69,7 +71,7 @@ export default function Landing() {
           </div>
           
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Elena Rodriguez. All rights reserved.</p>
+            <p>{t('footer.rights')}</p>
           </div>
         </div>
       </footer>

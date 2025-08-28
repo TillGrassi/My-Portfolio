@@ -3,8 +3,10 @@ import paintings from "../../assets/paintings.json";
 import { PaintingModal } from "./PaintingModal";
 import { GalleryNavigation } from "./GalleryNavigation";
 import type { Painting } from "@/types";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function GalleryView() {
+  const { t } = useLanguage();
   const [currentPaintingIndex, setCurrentPaintingIndex] = useState(0);
   const [selectedPainting, setSelectedPainting] = useState<Painting | null>(
     null
@@ -57,10 +59,10 @@ export function GalleryView() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-semibold text-deep-charcoal mb-4">
-              Gallery
+              {t('gallery.title')}
             </h2>
             <p className="text-lg text-gray-700">
-              No artworks available at the moment.
+              {t('gallery.noArtworks')}
             </p>
           </div>
         </div>
@@ -76,11 +78,10 @@ export function GalleryView() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-semibold text-deep-charcoal mb-4">
-              Gallery
+              {t('gallery.title')}
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Navigate through the gallery using the arrows to experience each
-              painting as if walking through a contemporary art space
+              {t('gallery.subtitle')}
             </p>
           </div>
 
@@ -143,10 +144,10 @@ export function GalleryView() {
                   }`}
                 ></i>
                 {currentPainting.availability === "available"
-                  ? "Available"
+                  ? t('gallery.available')
                   : currentPainting.availability === "sold"
-                  ? "Sold"
-                  : "Not for Sale"}
+                  ? t('gallery.sold')
+                  : t('gallery.notForSale')}
               </span>
             </div>
 
@@ -200,10 +201,10 @@ export function GalleryView() {
                       <i className="fas fa-star text-yellow-500 mr-1 text-xs"></i>
                     )}
                     {painting.availability === "available"
-                      ? "Available"
+                      ? t('gallery.available')
                       : painting.availability === "sold"
-                      ? "Sold"
-                      : "Not for Sale"}
+                      ? t('gallery.sold')
+                      : t('gallery.notForSale')}
                   </span>
                 </div>
               </div>

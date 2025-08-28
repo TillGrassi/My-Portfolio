@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import type { Painting } from "@/types";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface PaintingModalProps {
   painting: Painting;
@@ -8,6 +9,8 @@ interface PaintingModalProps {
 }
 
 export function PaintingModal({ painting, onClose }: PaintingModalProps) {
+  const { t } = useLanguage();
+  
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -60,19 +63,19 @@ export function PaintingModal({ painting, onClose }: PaintingModalProps) {
               
               <div className="space-y-3 text-gray-700 mb-6">
                 <div className="flex justify-between">
-                  <span className="font-medium">Year:</span>
+                  <span className="font-medium">{t('modal.year')}</span>
                   <span>{painting.year}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-medium">Medium:</span>
+                  <span className="font-medium">{t('modal.medium')}</span>
                   <span>{painting.medium}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-medium">Dimensions:</span>
+                  <span className="font-medium">{t('modal.dimensions')}</span>
                   <span>{painting.size}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-medium">Status:</span>
+                  <span className="font-medium">{t('modal.status')}</span>
                   <span 
                     className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                       painting.availability === 'available' 
@@ -85,8 +88,8 @@ export function PaintingModal({ painting, onClose }: PaintingModalProps) {
                     <i className={`fas fa-circle mr-2 text-xs ${
                       painting.availability === 'available' ? 'text-green-500' : 'text-orange-500'
                     }`}></i>
-                    {painting.availability === 'available' ? 'Available' : 
-                     painting.availability === 'sold' ? 'Sold' : 'Not for Sale'}
+                    {painting.availability === 'available' ? t('gallery.available') : 
+                     painting.availability === 'sold' ? t('gallery.sold') : t('gallery.notForSale')}
                   </span>
                 </div>
               </div>
@@ -99,7 +102,7 @@ export function PaintingModal({ painting, onClose }: PaintingModalProps) {
 
               {painting.tags && painting.tags.length > 0 && (
                 <div className="mb-6">
-                  <h5 className="font-medium text-gray-700 mb-3">Tags:</h5>
+                  <h5 className="font-medium text-gray-700 mb-3">{t('modal.tags')}</h5>
                   <div className="flex flex-wrap gap-2">
                     {painting.tags.map((tag: string, index: number) => (
                       <span 
@@ -119,27 +122,26 @@ export function PaintingModal({ painting, onClose }: PaintingModalProps) {
               <div className="hidden">
                 <div className="bg-warm-gray p-6 rounded-lg">
                   <h4 className="font-serif text-xl font-semibold text-deep-charcoal mb-4">
-                    Interested in this piece?
+                    {t('modal.interested')}
                   </h4>
                   
                   {painting.availability === 'available' ? (
                     <>
                       <p className="text-gray-600 mb-6">
-                        This artwork is available for purchase. Get in touch to discuss pricing, 
-                        shipping options, and payment arrangements.
+                        {t('modal.availableText')}
                       </p>
                       <Button 
                         className="w-full bg-deep-charcoal text-white hover:bg-gray-800"
                         onClick={handleInquiry}
                       >
-                        Inquire About Purchase
+                        {t('modal.inquirePurchase')}
                         <i className="fas fa-envelope ml-2"></i>
                       </Button>
                     </>
                   ) : painting.availability === 'sold' ? (
                     <>
                       <p className="text-gray-600 mb-6">
-                        This piece has been sold to a private collector. However, I may have similar works available or can create a commission piece.
+                        {t('modal.soldText')}
                       </p>
                       <Button 
                         variant="outline"
@@ -147,26 +149,26 @@ export function PaintingModal({ painting, onClose }: PaintingModalProps) {
                         onClick={handleInquiry}
                       >
                         <i className="fas fa-check-circle mr-2"></i>
-                        Inquire About Similar Works
+                        {t('modal.inquireSimilar')}
                       </Button>
                     </>
                   ) : (
                     <div className="w-full text-center py-3 px-6 bg-gray-200 text-gray-500 font-medium rounded">
                       <i className="fas fa-info-circle mr-2"></i>
-                      This piece is not for sale
+                      {t('modal.notForSaleText')}
                     </div>
                   )}
                 </div>
               </div>
               
               <div className="mt-6">
-                <h5 className="font-medium text-gray-700 mb-3">Share this artwork:</h5>
+                <h5 className="font-medium text-gray-700 mb-3">{t('modal.share')}</h5>
                 <div className="flex space-x-3">
                   <button 
                     className="text-gray-500 hover:text-deep-charcoal transition-colors"
                     onClick={() => navigator.share?.({ 
                       title: painting.title, 
-                      text: `Check out "${painting.title}" by Elena Rodriguez`,
+                      text: `Check out "${painting.title}" by Till Graßmann`,
                       url: window.location.href 
                     })}
                   >
@@ -176,7 +178,7 @@ export function PaintingModal({ painting, onClose }: PaintingModalProps) {
                     className="text-gray-500 hover:text-deep-charcoal transition-colors"
                     onClick={() => navigator.share?.({ 
                       title: painting.title, 
-                      text: `Check out "${painting.title}" by Elena Rodriguez`,
+                      text: `Check out "${painting.title}" by Till Graßmann`,
                       url: window.location.href 
                     })}
                   >
@@ -186,7 +188,7 @@ export function PaintingModal({ painting, onClose }: PaintingModalProps) {
                     className="text-gray-500 hover:text-deep-charcoal transition-colors"
                     onClick={() => navigator.share?.({ 
                       title: painting.title, 
-                      text: `Check out "${painting.title}" by Elena Rodriguez`,
+                      text: `Check out "${painting.title}" by Till Graßmann`,
                       url: window.location.href 
                     })}
                   >
